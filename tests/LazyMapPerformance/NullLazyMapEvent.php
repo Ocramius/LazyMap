@@ -25,6 +25,6 @@ use Athletic\AthleticEvent;
  *
  * @author Marco Pivetta <ocramius@gmail.com>
  */
-class AbstractLazyMapTest extends AthleticEvent
+class NullLazyMapEvent extends AthleticEvent
 {
 }
