@@ -23,4 +23,26 @@ namespace LazyMap;
  */
 abstract class AbstractLazyMap
 {
+    /**
+     * Magic PHP getter {@link }
+     *
+     * @param string $name
+     *
+     * @return mixed reference
+     */
+    public function & __get($name)
+    {
+        $this->$name = $this->instantiate($name);
+
+        return $this->$name;
+    }
+
+    /**
+     * Instantiate a particular key by the given name
+     *
+     * @param string $name
+     *
+     * @return mixed
+     */
+    abstract protected function instantiate($name);
 }

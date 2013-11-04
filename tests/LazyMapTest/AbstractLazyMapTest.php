@@ -50,8 +50,8 @@ class AbstractLazyMapTest extends PHPUnit_Framework_TestCase
 
     public function testDirectPropertyAccess()
     {
-        $this->assertSame('foo  - initialized value', $this->lazyMap->foo);
-        $this->assertSame('bar  - initialized value', $this->lazyMap->bar);
-        $this->assertSame('baz\\tab  - initialized value', $this->lazyMap->{'baz\\tab'});
+        $this->assertSame('foo - initialized value', $this->lazyMap->foo);
+        $this->assertSame('bar - initialized value', $this->lazyMap->bar);
+        $this->assertSame('baz\\tab - initialized value', $this->lazyMap->{'baz\\tab'});
     }
 }
