@@ -16,17 +16,15 @@
  * and is licensed under the MIT license.
  */
 
-namespace LazyMapTest;
+namespace LazyMapPerformance;
 
-use PHPUnit_Framework_TestCase;
+use Athletic\AthleticEvent;
 
 /**
- * Tests for {@see \LazyMap\AbstractLazyMap}
+ * Performance tests for {@see \LazyMapTestAsset\NullLazyMap}
  *
  * @author Marco Pivetta <ocramius@gmail.com>
- *
- * @covers \LazyMap\AbstractLazyMap
  */
-class AbstractLazyMapTest extends PHPUnit_Framework_TestCase
+class AbstractLazyMapTest extends AthleticEvent
 {
 }

@@ -16,17 +16,15 @@
  * and is licensed under the MIT license.
  */
 
-namespace LazyMapTest;
+namespace LazyMapTestAsset;
 
-use PHPUnit_Framework_TestCase;
+use LazyMap\AbstractLazyMap;
 
 /**
- * Tests for {@see \LazyMap\AbstractLazyMap}
+ * Example lazy map producing only null values
  *
  * @author Marco Pivetta <ocramius@gmail.com>
- *
- * @covers \LazyMap\AbstractLazyMap
  */
-class AbstractLazyMapTest extends PHPUnit_Framework_TestCase
+class NullLazyMap extends AbstractLazyMap
 {
 }
