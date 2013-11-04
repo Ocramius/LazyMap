@@ -29,4 +29,29 @@ use PHPUnit_Framework_TestCase;
  */
 class AbstractLazyMapTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var \LazyMap\AbstractLazyMap|\PHPUnit_Framework_MockObject_MockObject
+     */
+    protected $lazyMap;
+
+    public function setUp()
+    {
+        $this->lazyMap = $this->getMockForAbstractClass('LazyMap\AbstractLazyMap');
+
+        $this
+            ->lazyMap
+            ->expects($this->any())
+            ->method('instantiate')
+            ->with($this->isType('string'))
+            ->will($this->returnCallback(function ($key) {
+                return $key . ' - initialized value';
+            }));
+    }
+
+    public function testDirectPropertyAccess()
+    {
+        $this->assertSame('foo  - initialized value', $this->lazyMap->foo);
+        $this->assertSame('bar  - initialized value', $this->lazyMap->bar);
+        $this->assertSame('baz\\tab  - initialized value', $this->lazyMap->{'baz\\tab'});
+    }
 }
