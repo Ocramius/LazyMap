@@ -34,6 +34,9 @@ class AbstractLazyMapTest extends PHPUnit_Framework_TestCase
      */
     protected $lazyMap;
 
+    /**
+     * {@inheritDoc}
+     */
     public function setUp()
     {
         $this->lazyMap = $this->getMockForAbstractClass('LazyMap\AbstractLazyMap');

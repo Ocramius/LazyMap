@@ -16,21 +16,37 @@
  * and is licensed under the MIT license.
  */
 
-namespace LazyMapTestAsset;
+namespace LazyMapTest;
 
-use LazyMap\AbstractLazyMap;
+use LazyMapTestAsset\NullLazyMap;
+use PHPUnit_Framework_TestCase;
 
 /**
- * Example lazy map producing only null values
+ * Tests for {@see \LazyMap\AbstractLazyMap} and {@see \LazyMapTestAsset\NullLazyMap}
  *
  * @author Marco Pivetta <ocramius@gmail.com>
+ *
+ * @covers \LazyMap\AbstractLazyMap
  */
-class NullLazyMap extends AbstractLazyMap
+class NullLazyMapTest extends PHPUnit_Framework_TestCase
 {
+    /**
+     * @var \LazyMap\AbstractLazyMap|\PHPUnit_Framework_MockObject_MockObject
+     */
+    protected $lazyMap;
+
     /**
      * {@inheritDoc}
      */
-    protected function instantiate($name)
+    public function setUp()
     {
+        $this->lazyMap = new NullLazyMap();
+    }
+
+    public function testDirectPropertyAccess()
+    {
+        $this->assertSame(null, $this->lazyMap->foo);
+        $this->assertSame(null, $this->lazyMap->bar);
+        $this->assertSame(null, $this->lazyMap->{'baz\\tab'});
     }
 }
