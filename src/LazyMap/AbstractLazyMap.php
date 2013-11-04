@@ -24,7 +24,7 @@ namespace LazyMap;
 abstract class AbstractLazyMap
 {
     /**
-     * Magic PHP getter {@link }
+     * Magic PHP getter {@link http://www.php.net/manual/en/language.oop5.overloading.php#object.get}
      *
      * @param string $name
      *
@@ -34,6 +34,7 @@ abstract class AbstractLazyMap
     {
         $this->$name = $this->instantiate($name);
 
+        // assignment and return is not possible since PHP will segfault (bug report will come)
         return $this->$name;
     }
 
