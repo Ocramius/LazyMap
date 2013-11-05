@@ -19,6 +19,7 @@
 namespace LazyMapTest;
 
 use PHPUnit_Framework_TestCase;
+use stdClass;
 
 /**
  * Tests for {@see \LazyMap\AbstractLazyMap}
@@ -40,21 +41,70 @@ class AbstractLazyMapTest extends PHPUnit_Framework_TestCase
     public function setUp()
     {
         $this->lazyMap = $this->getMockForAbstractClass('LazyMap\AbstractLazyMap');
+    }
 
+    public function testDirectPropertyAccess()
+    {
         $this
             ->lazyMap
-            ->expects($this->any())
+            ->expects($this->exactly(3))
             ->method('instantiate')
             ->with($this->isType('string'))
             ->will($this->returnCallback(function ($key) {
                 return $key . ' - initialized value';
             }));
-    }
 
-    public function testDirectPropertyAccess()
-    {
         $this->assertSame('foo - initialized value', $this->lazyMap->foo);
         $this->assertSame('bar - initialized value', $this->lazyMap->bar);
         $this->assertSame('baz\\tab - initialized value', $this->lazyMap->{'baz\\tab'});
+    }
+
+    public function testMultipleDirectPropertyAccessDoesNotTriggerSameInstantiation()
+    {
+        $this
+            ->lazyMap
+            ->expects($this->exactly(2))
+            ->method('instantiate')
+            ->with($this->isType('string'))
+            ->will($this->returnCallback(function ($key) {
+                return new stdClass();
+            }));
+
+        $foo = $this->lazyMap->foo;
+
+        $this->assertInstanceOf('stdClass', $foo);
+        $this->assertSame($foo, $this->lazyMap->foo);
+        $bar = $this->lazyMap->bar;
+
+        $this->assertInstanceOf('stdClass', $bar);
+        $this->assertSame($bar, $this->lazyMap->bar);
+
+        $this->assertNotSame($bar, $foo);
+    }
+
+    public function testUnSettingPropertiesRemovesSharedInstance()
+    {
+        $this
+            ->lazyMap
+            ->expects($this->exactly(2))
+            ->method('instantiate')
+            ->with($this->isType('string'))
+            ->will($this->returnCallback(function ($key) {
+                return new stdClass();
+            }));
+
+        $foo = $this->lazyMap->foo;
+
+        $this->assertInstanceOf('stdClass', $foo);
+        $this->assertSame($foo, $this->lazyMap->foo);
+
+        unset($this->lazyMap->foo);
+
+        $bar = $this->lazyMap->foo;
+
+        $this->assertInstanceOf('stdClass', $bar);
+        $this->assertSame($bar, $this->lazyMap->foo);
+
+        $this->assertNotSame($bar, $foo);
     }
 }
