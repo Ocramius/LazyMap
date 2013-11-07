@@ -8,7 +8,7 @@ This small library aims at providing a very simple and efficient map of lazy-ins
 [![Total Downloads](https://poser.pugx.org/ocramius/lazy-map/downloads.png)](https://packagist.org/packages/ocramius/lazy-map)
 [![Latest Stable Version](https://poser.pugx.org/ocramius/lazy-map/v/stable.png)](https://packagist.org/packages/ocramius/lazy-map)
 [![Latest Unstable Version](https://poser.pugx.org/ocramius/lazy-map/v/unstable.png)](https://packagist.org/packages/ocramius/lazy-map)
-[![Dependency Status](https://www.versioneye.com/package/php--ocramius--lazy-map/badge.png)](https://www.versioneye.com/package/php--ocramius--lazy-map)
+[![Dependency Status](https://www.versioneye.com/php/ocramius:lazy-map/dev-master/badge.png)](https://www.versioneye.com/php/ocramius:lazy-map/dev-master)
 
 ## Installation
 
