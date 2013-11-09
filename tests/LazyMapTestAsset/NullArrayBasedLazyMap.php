@@ -18,17 +18,38 @@
 
 namespace LazyMapTestAsset;
 
-use LazyMap\AbstractLazyMap;
-
 /**
- * Example lazy map producing only null values
+ * Simple classical array-based map - used to simulate the overhead of a classical array-based solution
  *
  * @author Marco Pivetta <ocramius@gmail.com>
  */
-class NullLazyMap extends AbstractLazyMap
+class NullArrayBasedLazyMap
 {
     /**
-     * {@inheritDoc}
+     * @var mixed[]
+     */
+    private $items = array();
+
+    /**
+     * Lazy getter - retrieves or instantiates a key in the map
+     *
+     * @param string $name
+     *
+     * @return mixed
+     */
+    public function & get($name)
+    {
+        if (isset($this->items[$name])) {
+            return $this->items[$name];
+        }
+
+        $this->items[$name] = $this->instantiate($name);
+
+        return $this->items[$name];
+    }
+
+    /**
+     * Null instantiator, emulates same overhead of an {@see \LazyMapTestAsset\NullLazyMap}
      */
     protected function instantiate($name)
     {
