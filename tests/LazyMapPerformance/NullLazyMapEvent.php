@@ -19,6 +19,8 @@
 namespace LazyMapPerformance;
 
 use Athletic\AthleticEvent;
+use LazyMapTestAsset\NullArrayBasedLazyMap;
+use LazyMapTestAsset\NullLazyMap;
 
 /**
  * Performance tests for {@see \LazyMapTestAsset\NullLazyMap}
@@ -27,4 +29,103 @@ use Athletic\AthleticEvent;
  */
 class NullLazyMapEvent extends AthleticEvent
 {
+    /**
+     * @var mixed[]
+     */
+    private $array;
+
+    /**
+     * @var NullArrayBasedLazyMap
+     */
+    private $arrayMap;
+
+    /**
+     * @var NullLazyMap
+     */
+    private $lazyMap;
+
+    public function setUp()
+    {
+        $this->array    = array('existingKey' => null);
+        $this->arrayMap = new NullArrayBasedLazyMap();
+        $this->lazyMap  = new NullLazyMap();
+
+        // enforcing key instantiation
+        $this->arrayMap->get('existingKey');
+        $this->lazyMap->existingKey;
+    }
+
+    /**
+     * @baseline
+     * @iterations 100000
+     * @group initialized-map
+     *
+     * @return mixed
+     */
+    public function initializedArrayPerformance()
+    {
+        if (isset($this->array['existingKey'])) {
+            return $this->array['existingKey'];
+        }
+    }
+
+    /**
+     * @iterations 100000
+     * @group initialized-map
+     *
+     * @return mixed
+     */
+    public function initializedArrayMapPerformance()
+    {
+        return $this->arrayMap->get('existingKey');
+    }
+
+    /**
+     * @iterations 100000
+     * @group initialized-map
+     *
+     * @return mixed
+     */
+    public function initializedLazyMapPerformance()
+    {
+        return $this->lazyMap->existingKey;
+    }
+
+    /**
+     * @baseline
+     * @iterations 100000
+     * @group un-initialized-map
+     *
+     * @return mixed
+     */
+    public function unInitializedArrayPerformance()
+    {
+        if (isset($this->array['nonExistingKey'])) {
+            return $this->array['nonExistingKey'];
+        }
+
+        return $this->array['nonExistingKey'] = null;
+    }
+
+    /**
+     * @iterations 100000
+     * @group un-initialized-map
+     *
+     * @return mixed
+     */
+    public function unInitializedArrayMapPerformance()
+    {
+        return $this->arrayMap->get('nonExistingKey');
+    }
+
+    /**
+     * @iterations 100000
+     * @group un-initialized-map
+     *
+     * @return mixed
+     */
+    public function unInitializedLazyMapPerformance()
+    {
+        return $this->lazyMap->nonExistingKey;
+    }
 }
