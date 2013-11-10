@@ -44,7 +44,7 @@ The idea behind the library is to avoid un-efficient lazy-loading operations lik
 ```php
 private function getSomething($name)
 {
-    if (isset($this->initialized[$name])) {
+    if (isset($this->initialized[$name]) || array_key_exists($name, $this->initialized)) {
         return $this->initialized[$name];
     }
 

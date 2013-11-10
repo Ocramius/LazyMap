@@ -50,7 +50,7 @@ class NullLazyMapEvent extends AthleticEvent
         $this->arrayMap = new NullArrayBasedLazyMap();
         $this->lazyMap  = new NullLazyMap();
 
-        // enforcing key instantiation
+        // enforcing key initialization
         $this->arrayMap->get('existingKey');
         $this->lazyMap->existingKey;
     }
@@ -64,7 +64,7 @@ class NullLazyMapEvent extends AthleticEvent
      */
     public function initializedArrayPerformance()
     {
-        if (isset($this->array['existingKey'])) {
+        if (isset($this->array['existingKey']) || array_key_exists('existingKey', $this->array)) {
             return $this->array['existingKey'];
         }
     }
@@ -100,11 +100,11 @@ class NullLazyMapEvent extends AthleticEvent
      */
     public function unInitializedArrayPerformance()
     {
-        if (isset($this->array['nonExistingKey'])) {
+        if (isset($this->array['nonExistingKey']) || array_key_exists('nonExistingKey', $this->array)) {
             return $this->array['nonExistingKey'];
         }
 
-        return $this->array['nonExistingKey'] = null;
+        return $this->array['nonExistingKey'] = 0;
     }
 
     /**
