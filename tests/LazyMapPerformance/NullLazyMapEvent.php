@@ -46,7 +46,7 @@ class NullLazyMapEvent extends AthleticEvent
 
     public function setUp()
     {
-        $this->array    = array('existingKey' => null);
+        $this->array    = array('existingKey' => 0);
         $this->arrayMap = new NullArrayBasedLazyMap();
         $this->lazyMap  = new NullLazyMap();
 
