@@ -62,14 +62,17 @@ LazyMap actually performs much better than the "un-efficient" example that I've 
 You can look directly at the performance test suite for details on the tested implementations,
 but here are some results for you to have an idea of the boost:
 
-|LazyMapPerformance\NullLazyMapEvent                      |
-|initialized-map                                          |
+#### Initialized Map Performance:
+
 |Method Name                     |Ops/s          |Relative|
 |--------------------------------|---------------|--------|
 |initializedArrayPerformance     |2,277,272.90002|100.00% |
 |initializedArrayMapPerformance  |1,536,988.76108|148.16% |
 |initializedLazyMapPerformance   |4,446,227.23514|51.22%  |
-|un-initialized-map                                       |
+
+
+#### Un-Initialized Map Performance:
+
 |Method Name                     |Ops/s          |Relative|
 |--------------------------------|---------------|--------|
 |unInitializedArrayPerformance : |1,091,720.80627|100.00% |
