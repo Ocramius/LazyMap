@@ -55,3 +55,23 @@ private function getSomething($name)
 This reduces overhead greatly when you'd otherwise call `getSomething()` thousands of times.
 That's especially useful when mapping a lot of different services and iterating over them
 over and over again.
+
+## Performance
+
+LazyMap actually performs much better than the "un-efficient" example that I've shown above.
+You can look directly at the performance test suite for details on the tested implementations,
+but here are some results for you to have an idea of the boost:
+
+|LazyMapPerformance\NullLazyMapEvent                      |
+|initialized-map                                          |
+|Method Name                     |Ops/s          |Relative|
+|--------------------------------|---------------|--------|
+|initializedArrayPerformance     |2,277,272.90002|100.00% |
+|initializedArrayMapPerformance  |1,536,988.76108|148.16% |
+|initializedLazyMapPerformance   |4,446,227.23514|51.22%  |
+|un-initialized-map                                       |
+|Method Name                     |Ops/s          |Relative|
+|--------------------------------|---------------|--------|
+|unInitializedArrayPerformance : |1,091,720.80627|100.00% |
+|unInitializedArrayMapPerformance|688,132.30083  |158.65% |
+|unInitializedLazyMapPerformance:|912,191.90744  |119.68% |
