@@ -39,7 +39,7 @@ class NullArrayBasedLazyMap
      */
     public function & get($name)
     {
-        if (isset($this->items[$name])) {
+        if (isset($this->items[$name]) || array_key_exists($name, $this->items)) {
             return $this->items[$name];
         }
 
@@ -53,6 +53,6 @@ class NullArrayBasedLazyMap
      */
     protected function instantiate($name)
     {
-        return null;
+        return 0;
     }
 }
