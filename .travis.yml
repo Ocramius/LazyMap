@@ -11,7 +11,7 @@ script:
   - ./vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
   - time php -n ./vendor/bin/athletic -p ./test/LazyMapPerformance/ -f GroupedFormatter
   - ./vendor/bin/phpcs
-  - ./vendor/bin/roave-backwards-compatibility-check
+  - ./vendor/bin/roave-backward-compatibility-check
   - ./vendor/bin/composer-require-checker
   - php examples/simple-instantiator-map.php
 
