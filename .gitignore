@@ -1,6 +1,5 @@
 vendor
 composer.lock
 composer.phar
+infection.log
 phpunit.xml
-phpmd.xml
-phpdox.xml

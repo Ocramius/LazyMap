@@ -13,6 +13,7 @@ script:
   - ./vendor/bin/phpcs
   - ./vendor/bin/roave-backward-compatibility-check
   - ./vendor/bin/composer-require-checker
+  - ./vendor/bin/infection --min-msi=100 --min-covered-msi=100
   - php examples/simple-instantiator-map.php
 
 after_script:
