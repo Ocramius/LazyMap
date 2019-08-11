@@ -11,7 +11,7 @@ namespace LazyMap;
 class CallbackLazyMap extends AbstractLazyMap
 {
     /**
-     * @psalm-param callable(string) : T
+     * @psalm-param callable(string) : T $callback
      */
     public function __construct(callable $callback)
     {
@@ -21,7 +21,7 @@ class CallbackLazyMap extends AbstractLazyMap
     /**
      * {@inheritDoc}
      */
-    protected function instantiate($name)
+    protected function instantiate(string $name)
     {
         /** @psalm-var callable(string) : T $callback */
         $callback = $this->{self::class . "\0callback"};
