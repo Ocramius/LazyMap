@@ -15,7 +15,7 @@ This small library aims at providing a very simple and efficient map of lazy-ins
 The suggested installation method is via [composer](https://getcomposer.org/):
 
 ```sh
-php composer.phar require ocramius/lazy-map:1.0.*
+composer require ocramius/lazy-map
 ```
 
 ## Usage
