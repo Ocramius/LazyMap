@@ -21,7 +21,6 @@ abstract class AbstractLazyMap
     {
         $this->$name = $this->instantiate($name);
 
-        // assignment and return is not possible since PHP will segfault (bug report will come)
         /** @psalm-suppress MixedReturnStatement */
         return $this->$name;
     }
