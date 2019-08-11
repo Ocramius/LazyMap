@@ -5,13 +5,14 @@ declare(strict_types=1);
 namespace LazyMap;
 
 /**
- * @psalm-template T
- * @template-extends AbstractLazyMap<T>
+ * @psalm-template KeyType of string
+ * @psalm-template ValueType
+ * @template-extends AbstractLazyMap<KeyName, ValueType>
  */
 final class CallbackLazyMap extends AbstractLazyMap
 {
     /**
-     * @psalm-param callable(string) : T $callback
+     * @psalm-param callable(KeyType) : ValueType $callback
      */
     public function __construct(callable $callback)
     {
@@ -19,11 +20,12 @@ final class CallbackLazyMap extends AbstractLazyMap
     }
 
     /**
-     * {@inheritDoc}
+     * @psalm-param KeyType $name
+     * @psalm-return ValueType
      */
-    protected function instantiate(string $name)
+    private function instantiate(string $name)
     {
-        /** @psalm-var callable(string) : T $callback */
+        /** @psalm-var callable(KeyType) : ValueType $callback */
         $callback = $this->{self::class . "\0callback"};
 
         return $callback($name);

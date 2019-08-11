@@ -9,7 +9,7 @@ use LazyMap\AbstractLazyMap;
 /**
  * Example lazy map producing only null values
  *
- * @template-extends AbstractLazyMap<null>
+ * @template-extends AbstractLazyMap<string, null>
  */
 class NullLazyMap extends AbstractLazyMap
 {

@@ -5,7 +5,8 @@ declare(strict_types=1);
 namespace LazyMap;
 
 /**
- * @psalm-template T
+ * @psalm-template KeyType of string
+ * @psalm-template ValueType
  */
 abstract class AbstractLazyMap
 {
@@ -14,7 +15,8 @@ abstract class AbstractLazyMap
      *
      * @return mixed reference to the instantiated property
      *
-     * @psalm-return T
+     * @psalm-param KeyType $name
+     * @psalm-return ValueType
      * @psalm-suppress MixedInferredReturnType
      */
     public function & __get(string $name)
@@ -30,7 +32,8 @@ abstract class AbstractLazyMap
      *
      * @return mixed
      *
-     * @psalm-return T
+     * @psalm-param KeyType $name
+     * @psalm-return ValueType
      */
     abstract protected function instantiate(string $name);
 }
