@@ -19,14 +19,15 @@
 namespace LazyMap;
 
 /**
- * @author Marco Pivetta <ocramius@gmail.com>
+ * @psalm-template T
+ * @template-extends AbstractLazyMap<T>
  */
 class CallbackLazyMap extends AbstractLazyMap
 {
     /**
-     * @param callable $callback
+     * @psalm-param callable(string) : T
      */
-    public function __construct($callback)
+    public function __construct(callable $callback)
     {
         $this->{__CLASS__ . "\0callback"} = $callback;
     }
@@ -36,6 +37,7 @@ class CallbackLazyMap extends AbstractLazyMap
      */
     protected function instantiate($name)
     {
+        /** @psalm-var callable(string) : T $callback */
         $callback = $this->{__CLASS__ . "\0callback"};
 
         return $callback($name);

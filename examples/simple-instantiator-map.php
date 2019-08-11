@@ -1,10 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 require_once __DIR__ . '/../vendor/autoload.php';
 
 use LazyMap\CallbackLazyMap;
 
-$map = new CallbackLazyMap(function ($name) {
+$map = new CallbackLazyMap(static function (string $name) : stdClass {
     $object = new stdClass();
 
     $object->name = $name;

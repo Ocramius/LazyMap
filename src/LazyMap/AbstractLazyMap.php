@@ -19,7 +19,7 @@
 namespace LazyMap;
 
 /**
- * @author Marco Pivetta <ocramius@gmail.com>
+ * @psalm-template T
  */
 abstract class AbstractLazyMap
 {
@@ -29,12 +29,16 @@ abstract class AbstractLazyMap
      * @param string $name
      *
      * @return mixed reference
+     *
+     * @psalm-return T
+     * @psalm-suppress MixedInferredReturnType
      */
-    public function & __get($name)
+    public function & __get(string $name)
     {
         $this->$name = $this->instantiate($name);
 
         // assignment and return is not possible since PHP will segfault (bug report will come)
+        /** @psalm-suppress MixedReturnStatement */
         return $this->$name;
     }
 
@@ -44,6 +48,8 @@ abstract class AbstractLazyMap
      * @param string $name
      *
      * @return mixed
+     *
+     * @psalm-return T
      */
-    abstract protected function instantiate($name);
+    abstract protected function instantiate(string $name);
 }

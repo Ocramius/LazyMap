@@ -1,52 +1,29 @@
 <?php
-/*
- * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
- * "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
- * LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR
- * A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT
- * OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL,
- * SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT
- * LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,
- * DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
- * THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
- * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
- * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- *
- * This software consists of voluntary contributions made by many individuals
- * and is licensed under the MIT license.
- */
+
+declare(strict_types=1);
 
 namespace LazyMapPerformance;
 
 use Athletic\AthleticEvent;
 use LazyMapTestAsset\NullArrayBasedLazyMap;
 use LazyMapTestAsset\NullLazyMap;
+use function array_key_exists;
 
-/**
- * Performance tests for {@see \LazyMapTestAsset\NullLazyMap}
- *
- * @author Marco Pivetta <ocramius@gmail.com>
- */
+/** Performance tests for {@see \LazyMapTestAsset\NullLazyMap} */
 class NullLazyMapEvent extends AthleticEvent
 {
-    /**
-     * @var mixed[]
-     */
+    /** @var mixed[] */
     private $array;
 
-    /**
-     * @var NullArrayBasedLazyMap
-     */
+    /** @var NullArrayBasedLazyMap */
     private $arrayMap;
 
-    /**
-     * @var NullLazyMap
-     */
+    /** @var NullLazyMap */
     private $lazyMap;
 
-    public function setUp()
+    public function setUp() : void
     {
-        $this->array    = array('existingKey' => 0);
+        $this->array    = ['existingKey' => 0];
         $this->arrayMap = new NullArrayBasedLazyMap();
         $this->lazyMap  = new NullLazyMap();
 
@@ -56,11 +33,11 @@ class NullLazyMapEvent extends AthleticEvent
     }
 
     /**
+     * @return mixed
+     *
      * @baseline
      * @iterations 100000
      * @group initialized-map
-     *
-     * @return mixed
      */
     public function initializedArrayPerformance()
     {
@@ -70,10 +47,10 @@ class NullLazyMapEvent extends AthleticEvent
     }
 
     /**
+     * @return mixed
+     *
      * @iterations 100000
      * @group initialized-map
-     *
-     * @return mixed
      */
     public function initializedArrayMapPerformance()
     {
@@ -81,10 +58,10 @@ class NullLazyMapEvent extends AthleticEvent
     }
 
     /**
+     * @return mixed
+     *
      * @iterations 100000
      * @group initialized-map
-     *
-     * @return mixed
      */
     public function initializedLazyMapPerformance()
     {
@@ -92,11 +69,11 @@ class NullLazyMapEvent extends AthleticEvent
     }
 
     /**
+     * @return mixed
+     *
      * @baseline
      * @iterations 100000
      * @group un-initialized-map
-     *
-     * @return mixed
      */
     public function unInitializedArrayPerformance()
     {
@@ -108,10 +85,10 @@ class NullLazyMapEvent extends AthleticEvent
     }
 
     /**
+     * @return mixed
+     *
      * @iterations 100000
      * @group un-initialized-map
-     *
-     * @return mixed
      */
     public function unInitializedArrayMapPerformance()
     {
@@ -119,10 +96,10 @@ class NullLazyMapEvent extends AthleticEvent
     }
 
     /**
+     * @return mixed
+     *
      * @iterations 100000
      * @group un-initialized-map
-     *
-     * @return mixed
      */
     public function unInitializedLazyMapPerformance()
     {
