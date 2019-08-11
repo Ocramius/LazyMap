@@ -4,7 +4,6 @@
     "type":              "library",
     "license":           "MIT",
     "homepage":          "https://github.com/Ocramius/LazyMap",
-    "minimum-stability": "dev",
     "keywords":          [
         "lazy",
         "lazy loading",
