@@ -8,7 +8,7 @@ namespace LazyMap;
  * @psalm-template T
  * @template-extends AbstractLazyMap<T>
  */
-class CallbackLazyMap extends AbstractLazyMap
+final class CallbackLazyMap extends AbstractLazyMap
 {
     /**
      * @psalm-param callable(string) : T $callback
