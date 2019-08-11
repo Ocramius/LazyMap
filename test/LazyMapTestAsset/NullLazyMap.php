@@ -6,7 +6,11 @@ namespace LazyMapTestAsset;
 
 use LazyMap\AbstractLazyMap;
 
-/** Example lazy map producing only null values */
+/**
+ * Example lazy map producing only null values
+ *
+ * @template-extends AbstractLazyMap<null>
+ */
 class NullLazyMap extends AbstractLazyMap
 {
     /** @return null */
