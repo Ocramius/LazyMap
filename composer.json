@@ -23,11 +23,13 @@
         "php": "^7.3"
     },
     "require-dev": {
-        "athletic/athletic":         "~0.1.8",
-        "doctrine/coding-standard":  "^6.0.0",
-        "phpunit/phpunit":           "^8.3.3",
-        "squizlabs/php_codesniffer": "^3.4.2",
-        "vimeo/psalm":               "^3.4.11"
+        "athletic/athletic":                  "~0.1.8",
+        "doctrine/coding-standard":           "^6.0.0",
+        "maglnet/composer-require-checker":   "^2.0.0",
+        "phpunit/phpunit":                    "^8.3.3",
+        "roave/backward-compatibility-check": "^4.0.0",
+        "squizlabs/php_codesniffer":          "^3.4.2",
+        "vimeo/psalm":                        "^3.4.11"
     },
     "autoload": {
         "psr-4": {
