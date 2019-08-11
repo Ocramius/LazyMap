@@ -12,9 +12,7 @@ abstract class AbstractLazyMap
     /**
      * Magic PHP getter {@link http://www.php.net/manual/en/language.oop5.overloading.php#object.get}
      *
-     * @param string $name
-     *
-     * @return mixed reference
+     * @return mixed reference to the instantiated property
      *
      * @psalm-return T
      * @psalm-suppress MixedInferredReturnType
