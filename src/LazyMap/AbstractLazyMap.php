@@ -29,8 +29,6 @@ abstract class AbstractLazyMap
     /**
      * Instantiate a particular key by the given name
      *
-     * @param string $name
-     *
      * @return mixed
      *
      * @psalm-return T
