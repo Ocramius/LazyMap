@@ -19,6 +19,7 @@
 
     <rule ref="Doctrine">
         <exclude name="SlevomatCodingStandard.Classes.SuperfluousAbstractClassNaming.SuperfluousPrefix"/>
+        <exclude name="Squiz.Functions.FunctionDeclarationArgumentSpacing.SpacingAfterReference"/>
     </rule>
 </ruleset>
 
