@@ -12,11 +12,10 @@ use PHPUnit\Framework\TestCase;
 /** @covers \LazyMap\CallbackLazyMap */
 class CallbackLazyMapTest extends TestCase
 {
-    /** @var CallbackLazyMap */
-    protected $lazyMap;
+    protected CallbackLazyMap $lazyMap;
 
     /** @var CallableClass&MockObject */
-    protected $callback;
+    protected CallableClass $callback;
 
     /**
      * {@inheritDoc}

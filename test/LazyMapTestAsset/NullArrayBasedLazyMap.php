@@ -12,7 +12,7 @@ use function array_key_exists;
 class NullArrayBasedLazyMap
 {
     /** @var array<string, int> */
-    private $items = [];
+    private array $items = [];
 
     /** Lazy getter - retrieves or instantiates a key in the map */
     public function & get(string $name) : int

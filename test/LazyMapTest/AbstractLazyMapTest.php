@@ -13,7 +13,7 @@ use stdClass;
 class AbstractLazyMapTest extends TestCase
 {
     /** @var AbstractLazyMap&MockObject */
-    protected $lazyMap;
+    protected AbstractLazyMap $lazyMap;
 
     /**
      * {@inheritDoc}
