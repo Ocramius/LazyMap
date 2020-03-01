@@ -13,9 +13,6 @@ class NullLazyMapTest extends TestCase
 {
     protected AbstractLazyMap $lazyMap;
 
-    /**
-     * {@inheritDoc}
-     */
     public function setUp() : void
     {
         $this->lazyMap = new NullLazyMap();

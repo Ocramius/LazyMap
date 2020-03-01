@@ -17,9 +17,6 @@ class CallbackLazyMapTest extends TestCase
     /** @var CallableClass&MockObject */
     protected CallableClass $callback;
 
-    /**
-     * {@inheritDoc}
-     */
     public function setUp() : void
     {
         $this->callback = $this->createMock(CallableClass::class);
