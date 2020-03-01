@@ -12,11 +12,27 @@ namespace LazyMap;
 final class CallbackLazyMap extends AbstractLazyMap
 {
     /**
+     * This is a trade-off: the callback lazy map was designed to
+     * have no accessible properties for its internal details, but
+     * somebody requesting explicitly for the key "internalCallbackDoNotReferenceThisThereWillBeDragons"
+     * is indeed looking for trouble.
+     *
+     * The initial design used a key with a "\0" in its name, but
+     * that was too hacky and led to optimizations and type inference
+     * problems that are not worth the added safety.
+     *
+     * @var callable
+     *
+     * @psalm-var callable(KeyType) : ValueType
+     */
+    private $internalCallbackDoNotReferenceThisThereWillBeDragons;
+
+    /**
      * @psalm-param callable(KeyType) : ValueType $callback
      */
     public function __construct(callable $callback)
     {
-        $this->{self::class . "\0callback"} = $callback;
+        $this->internalCallbackDoNotReferenceThisThereWillBeDragons = $callback;
     }
 
     /**
@@ -25,9 +41,6 @@ final class CallbackLazyMap extends AbstractLazyMap
      */
     protected function instantiate(string $name)
     {
-        /** @psalm-var callable(KeyType) : ValueType $callback */
-        $callback = $this->{self::class . "\0callback"};
-
-        return $callback($name);
+        return ($this->internalCallbackDoNotReferenceThisThereWillBeDragons)($name);
     }
 }
