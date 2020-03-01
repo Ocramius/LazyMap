@@ -7,7 +7,7 @@ namespace LazyMap;
 /**
  * @psalm-template KeyType of string
  * @psalm-template ValueType
- * @template-extends AbstractLazyMap<KeyName, ValueType>
+ * @template-extends AbstractLazyMap<KeyType, ValueType>
  */
 final class CallbackLazyMap extends AbstractLazyMap
 {
@@ -23,7 +23,7 @@ final class CallbackLazyMap extends AbstractLazyMap
      * @psalm-param KeyType $name
      * @psalm-return ValueType
      */
-    private function instantiate(string $name)
+    protected function instantiate(string $name)
     {
         /** @psalm-var callable(KeyType) : ValueType $callback */
         $callback = $this->{self::class . "\0callback"};
