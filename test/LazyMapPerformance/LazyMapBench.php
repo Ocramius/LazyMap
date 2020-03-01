@@ -15,13 +15,11 @@ use function array_key_exists;
 class LazyMapBench
 {
     /** @var array<string, int> */
-    private $array;
+    private array $array;
 
-    /** @var NullArrayBasedLazyMap */
-    private $arrayMap;
+    private NullArrayBasedLazyMap $arrayMap;
 
-    /** @var NullLazyMap */
-    private $lazyMap;
+    private NullLazyMap $lazyMap;
 
     public function setUp() : void
     {

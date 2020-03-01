@@ -12,15 +12,11 @@ use PHPUnit\Framework\TestCase;
 /** @covers \LazyMap\CallbackLazyMap */
 class CallbackLazyMapTest extends TestCase
 {
-    /** @var CallbackLazyMap */
-    protected $lazyMap;
+    protected CallbackLazyMap $lazyMap;
 
     /** @var CallableClass&MockObject */
-    protected $callback;
+    protected CallableClass $callback;
 
-    /**
-     * {@inheritDoc}
-     */
     public function setUp() : void
     {
         $this->callback = $this->createMock(CallableClass::class);
@@ -44,8 +40,8 @@ class CallbackLazyMapTest extends TestCase
                 return $name . ' - ' . $count;
             });
 
-        self::assertSame('foo - 1', $this->lazyMap->foo);
-        self::assertSame('bar - 2', $this->lazyMap->bar);
-        self::assertSame('baz\\tab - 3', $this->lazyMap->{'baz\\tab'});
+        self::assertEquals('foo - 1', $this->lazyMap->foo);
+        self::assertEquals('bar - 2', $this->lazyMap->bar);
+        self::assertEquals('baz\\tab - 3', $this->lazyMap->{'baz\\tab'});
     }
 }

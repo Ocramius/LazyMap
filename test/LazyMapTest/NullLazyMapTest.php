@@ -11,12 +11,8 @@ use PHPUnit\Framework\TestCase;
 /** @covers \LazyMap\AbstractLazyMap */
 class NullLazyMapTest extends TestCase
 {
-    /** @var AbstractLazyMap */
-    protected $lazyMap;
+    protected AbstractLazyMap $lazyMap;
 
-    /**
-     * {@inheritDoc}
-     */
     public function setUp() : void
     {
         $this->lazyMap = new NullLazyMap();

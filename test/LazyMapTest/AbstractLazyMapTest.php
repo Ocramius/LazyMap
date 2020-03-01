@@ -13,11 +13,8 @@ use stdClass;
 class AbstractLazyMapTest extends TestCase
 {
     /** @var AbstractLazyMap&MockObject */
-    protected $lazyMap;
+    protected AbstractLazyMap $lazyMap;
 
-    /**
-     * {@inheritDoc}
-     */
     public function setUp() : void
     {
         $this->lazyMap = $this->getMockForAbstractClass(AbstractLazyMap::class);
