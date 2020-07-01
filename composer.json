@@ -22,7 +22,7 @@
         "php": "^7.4"
     },
     "require-dev": {
-        "doctrine/coding-standard":           "^7.0.2",
+        "doctrine/coding-standard":           "^8.0.0",
         "infection/infection":                "^0.15.2",
         "maglnet/composer-require-checker":   "^2.0.0",
         "phpbench/phpbench":                  "^0.17.1",
