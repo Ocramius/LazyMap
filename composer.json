@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": "^7.4 || ^8.0"
+        "php": "^8.0"
     },
     "require-dev": {
         "doctrine/coding-standard":           "^8.2.0",
@@ -38,11 +38,6 @@
             "LazyMapPerformance\\": "test/LazyMapPerformance",
             "LazyMapTest\\": "test/LazyMapTest",
             "LazyMapTestAsset\\": "test/LazyMapTestAsset"
-        }
-    },
-    "config": {
-        "platform": {
-            "php": "7.4.7"
         }
     }
 }
