@@ -15,12 +15,12 @@ class AbstractLazyMapTest extends TestCase
     /** @var AbstractLazyMap&MockObject */
     protected AbstractLazyMap $lazyMap;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->lazyMap = $this->getMockForAbstractClass(AbstractLazyMap::class);
     }
 
-    public function testDirectPropertyAccess() : void
+    public function testDirectPropertyAccess(): void
     {
         /** @psalm-var AbstractLazyMap<string>&MockObject $lazyMap */
         $lazyMap = $this->lazyMap;
@@ -29,7 +29,7 @@ class AbstractLazyMapTest extends TestCase
             ->expects($this->exactly(3))
             ->method('instantiate')
             ->with($this->isType('string'))
-            ->willReturnCallback(static function (string $key) : string {
+            ->willReturnCallback(static function (string $key): string {
                 return $key . ' - initialized value';
             });
 
@@ -38,7 +38,7 @@ class AbstractLazyMapTest extends TestCase
         self::assertSame('baz\\tab - initialized value', $lazyMap->{'baz\\tab'});
     }
 
-    public function testMultipleDirectPropertyAccessDoesNotTriggerSameInstantiation() : void
+    public function testMultipleDirectPropertyAccessDoesNotTriggerSameInstantiation(): void
     {
         /** @psalm-var AbstractLazyMap<stdClass>&MockObject $lazyMap */
         $lazyMap = $this->lazyMap;
@@ -47,7 +47,7 @@ class AbstractLazyMapTest extends TestCase
             ->expects($this->exactly(2))
             ->method('instantiate')
             ->with($this->isType('string'))
-            ->willReturnCallback(static function (string $key) : stdClass {
+            ->willReturnCallback(static function (string $key): stdClass {
                 return new stdClass();
             });
 
@@ -62,7 +62,7 @@ class AbstractLazyMapTest extends TestCase
         self::assertNotSame($bar, $foo);
     }
 
-    public function testUnSettingPropertiesRemovesSharedInstance() : void
+    public function testUnSettingPropertiesRemovesSharedInstance(): void
     {
         /** @psalm-var AbstractLazyMap<stdClass>&MockObject $lazyMap */
         $lazyMap = $this->lazyMap;
@@ -71,7 +71,7 @@ class AbstractLazyMapTest extends TestCase
             ->expects($this->exactly(2))
             ->method('instantiate')
             ->with($this->isType('string'))
-            ->willReturnCallback(static function (string $key) : stdClass {
+            ->willReturnCallback(static function (string $key): stdClass {
                 return new stdClass();
             });
 

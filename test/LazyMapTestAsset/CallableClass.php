@@ -7,5 +7,5 @@ namespace LazyMapTestAsset;
 /** Callable class - useful for stubbing __invoke */
 abstract class CallableClass
 {
-    abstract public function __invoke(string $name) : string;
+    abstract public function __invoke(string $name): string;
 }

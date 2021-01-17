@@ -13,12 +13,12 @@ class NullLazyMapTest extends TestCase
 {
     protected AbstractLazyMap $lazyMap;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->lazyMap = new NullLazyMap();
     }
 
-    public function testDirectPropertyAccess() : void
+    public function testDirectPropertyAccess(): void
     {
         self::assertSame(null, $this->lazyMap->foo);
         self::assertSame(null, $this->lazyMap->bar);

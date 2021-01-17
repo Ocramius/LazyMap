@@ -7,6 +7,7 @@ namespace LazyMapPerformance;
 use LazyMapTestAsset\NullArrayBasedLazyMap;
 use LazyMapTestAsset\NullLazyMap;
 use PhpBench\Benchmark\Metadata\Annotations\BeforeMethods;
+
 use function array_key_exists;
 
 /**
@@ -21,7 +22,7 @@ class LazyMapBench
 
     private NullLazyMap $lazyMap;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->array    = ['existingKey' => 0];
         $this->arrayMap = new NullArrayBasedLazyMap();
@@ -32,7 +33,7 @@ class LazyMapBench
         $this->lazyMap->existingKey;
     }
 
-    public function benchInitializedArrayPerformance() : int
+    public function benchInitializedArrayPerformance(): int
     {
         if (array_key_exists('existingKey', $this->array)) {
             return $this->array['existingKey'];
@@ -41,7 +42,7 @@ class LazyMapBench
         return 0;
     }
 
-    public function benchInitializedArrayMapPerformance() : int
+    public function benchInitializedArrayMapPerformance(): int
     {
         return $this->arrayMap->get('existingKey');
     }
@@ -52,7 +53,7 @@ class LazyMapBench
         return $this->lazyMap->existingKey;
     }
 
-    public function benchUnInitializedArrayPerformance() : int
+    public function benchUnInitializedArrayPerformance(): int
     {
         if (array_key_exists('nonExistingKey', $this->array)) {
             return $this->array['nonExistingKey'];
@@ -61,7 +62,7 @@ class LazyMapBench
         return $this->array['nonExistingKey'] = 0;
     }
 
-    public function benchUnInitializedArrayMapPerformance() : int
+    public function benchUnInitializedArrayMapPerformance(): int
     {
         return $this->arrayMap->get('nonExistingKey');
     }
