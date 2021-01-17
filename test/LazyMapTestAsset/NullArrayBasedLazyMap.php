@@ -15,7 +15,7 @@ class NullArrayBasedLazyMap
     private array $items = [];
 
     /** Lazy getter - retrieves or instantiates a key in the map */
-    public function & get(string $name) : int
+    public function & get(string $name): int
     {
         if (isset($this->items[$name]) || array_key_exists($name, $this->items)) {
             return $this->items[$name];
@@ -29,7 +29,7 @@ class NullArrayBasedLazyMap
     /**
      * Null instantiator, emulates same overhead of an {@see \LazyMapTestAsset\NullLazyMap}
      */
-    protected function instantiate(string $name) : int
+    protected function instantiate(string $name): int
     {
         return 0;
     }

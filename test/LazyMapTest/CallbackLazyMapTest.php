@@ -17,22 +17,22 @@ class CallbackLazyMapTest extends TestCase
     /** @var CallableClass&MockObject */
     protected CallableClass $callback;
 
-    public function setUp() : void
+    public function setUp(): void
     {
         $this->callback = $this->createMock(CallableClass::class);
-        $this->lazyMap  = new CallbackLazyMap(function (string $name) : string {
+        $this->lazyMap  = new CallbackLazyMap(function (string $name): string {
             return $this->callback->__invoke($name);
         });
     }
 
-    public function testDirectPropertyAccess() : void
+    public function testDirectPropertyAccess(): void
     {
         $count = 0;
         $this
             ->callback
             ->expects($this->exactly(3))
             ->method('__invoke')
-            ->willReturnCallback(static function (string $name) use (& $count) : string {
+            ->willReturnCallback(static function (string $name) use (& $count): string {
                 self::assertIsInt($count);
 
                 $count += 1;
