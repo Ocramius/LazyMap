@@ -22,7 +22,7 @@ class AbstractLazyMapTest extends TestCase
 
     public function testDirectPropertyAccess(): void
     {
-        /** @psalm-var AbstractLazyMap<string>&MockObject $lazyMap */
+        /** @psalm-var AbstractLazyMap<string, string>&MockObject $lazyMap */
         $lazyMap = $this->lazyMap;
 
         $lazyMap
@@ -40,7 +40,7 @@ class AbstractLazyMapTest extends TestCase
 
     public function testMultipleDirectPropertyAccessDoesNotTriggerSameInstantiation(): void
     {
-        /** @psalm-var AbstractLazyMap<stdClass>&MockObject $lazyMap */
+        /** @psalm-var AbstractLazyMap<string, stdClass>&MockObject $lazyMap */
         $lazyMap = $this->lazyMap;
 
         $lazyMap
@@ -64,7 +64,7 @@ class AbstractLazyMapTest extends TestCase
 
     public function testUnSettingPropertiesRemovesSharedInstance(): void
     {
-        /** @psalm-var AbstractLazyMap<stdClass>&MockObject $lazyMap */
+        /** @psalm-var AbstractLazyMap<string, stdClass>&MockObject $lazyMap */
         $lazyMap = $this->lazyMap;
 
         $lazyMap

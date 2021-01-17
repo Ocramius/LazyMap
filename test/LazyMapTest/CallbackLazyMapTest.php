@@ -6,6 +6,8 @@ namespace LazyMapTest;
 
 use LazyMap\CallbackLazyMap;
 use LazyMapTestAsset\CallableClass;
+use LazyMapTestAsset\InstantiableClassA;
+use LazyMapTestAsset\InstantiableClassB;
 use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 
@@ -43,5 +45,31 @@ class CallbackLazyMapTest extends TestCase
         self::assertEquals('foo - 1', $this->lazyMap->foo);
         self::assertEquals('bar - 2', $this->lazyMap->bar);
         self::assertEquals('baz\\tab - 3', $this->lazyMap->{'baz\\tab'});
+    }
+
+    public function testCanActAsFactoryForDynamicTypes() : void
+    {
+        $map = new CallbackLazyMap([self::class, 'makeInstanceByClassName']);
+
+        self::assertSame(
+            InstantiableClassA::class,
+            $map->{InstantiableClassA::class}
+                ->getClassName()
+        );
+        self::assertSame(
+            InstantiableClassB::class,
+            $map->{InstantiableClassB::class}
+                ->getClassName()
+        );
+    }
+
+    /**
+     * @psalm-template InstanceType of object
+     * @psalm-param class-string<InstanceType> $className
+     * @psalm-return InstanceType
+     */
+    public static function makeInstanceByClassName(string $className) : object
+    {
+        return new $className();
     }
 }
