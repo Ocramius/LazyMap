@@ -25,7 +25,7 @@
         "doctrine/coding-standard":           "^8.2.0",
         "infection/infection":                "^0.22.0",
         "phpbench/phpbench":                  "^1.0.0-alpha4",
-        "phpunit/phpunit":                    "^9.5.6",
+        "phpunit/phpunit":                    "^9.5.8",
         "vimeo/psalm":                        "^4.6.2"
     },
     "autoload": {
