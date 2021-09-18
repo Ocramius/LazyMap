@@ -1,6 +1,12 @@
 # See https://github.com/laminas/laminas-continuous-integration-action
 # Generates a job matrix based on current dependencies and supported version
 # ranges, then runs all those jobs
+name: "Continuous Integration"
+
+on:
+  pull_request:
+  push:
+
 jobs:
   matrix:
     name: Generate job matrix
