@@ -9,6 +9,14 @@
         "interval": "daily"
       },
       "versioning-strategy": "increase"
+    },
+    {
+      "assignees": [ "Ocramius" ],
+      "directory": "/",
+      "package-ecosystem": "github-actions",
+      "schedule": {
+        "interval": "daily"
+      }
     }
   ]
 }
