@@ -1,0 +1,14 @@
+{
+  "version": 2,
+  "updates": [
+    {
+      "assignees": [ "Ocramius" ],
+      "directory": "/",
+      "package-ecosystem": "composer",
+      "schedule": {
+        "interval": "daily"
+      },
+      "versioning-strategy": "increase"
+    }
+  ]
+}
