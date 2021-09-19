@@ -1,8 +1,9 @@
 {
-    "bootstrap": "vendor/autoload.php",
-    "path": "test/LazyMapPerformance",
-    "retry_threshold": 5,
-    "reports": {
+    "runner.bootstrap":       "vendor/autoload.php",
+    "runner.path":            "test/LazyMapPerformance",
+    "runner.retry_threshold": 5,
+    "runner.warmup":          2,
+    "report.outputs":         {
         "report": {
             "extends": "aggregate"
         }
