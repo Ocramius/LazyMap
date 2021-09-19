@@ -5,6 +5,7 @@
     xsi:schemaLocation="https://getpsalm.org/schema/config vendor/vimeo/psalm/config.xsd"
     totallyTyped="true"
     rememberPropertyAssignmentsAfterCall="false"
+    findUnusedPsalmSuppress="true"
 >
     <projectFiles>
         <directory name="examples"/>

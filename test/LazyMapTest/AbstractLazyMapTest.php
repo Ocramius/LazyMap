@@ -47,7 +47,7 @@ class AbstractLazyMapTest extends TestCase
             ->expects($this->exactly(2))
             ->method('instantiate')
             ->with($this->isType('string'))
-            ->willReturnCallback(static function (string $key): stdClass {
+            ->willReturnCallback(static function (): stdClass {
                 return new stdClass();
             });
 
@@ -71,7 +71,7 @@ class AbstractLazyMapTest extends TestCase
             ->expects($this->exactly(2))
             ->method('instantiate')
             ->with($this->isType('string'))
-            ->willReturnCallback(static function (string $key): stdClass {
+            ->willReturnCallback(static function (): stdClass {
                 return new stdClass();
             });
 
