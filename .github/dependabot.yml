@@ -7,9 +7,6 @@
           "dependency-type": "all"
         }
       ],
-      "assignees": [
-          "Ocramius"
-      ],
       "directory": "/",
       "package-ecosystem": "composer",
       "schedule": {
@@ -18,7 +15,6 @@
       "versioning-strategy": "increase"
     },
     {
-      "assignees": [ "Ocramius" ],
       "directory": "/",
       "package-ecosystem": "github-actions",
       "schedule": {
