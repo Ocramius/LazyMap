@@ -2,7 +2,14 @@
   "version": 2,
   "updates": [
     {
-      "assignees": [ "Ocramius" ],
+      "allow": [
+        {
+          "dependency-type": "all"
+        }
+      ],
+      "assignees": [
+          "Ocramius"
+      ],
       "directory": "/",
       "package-ecosystem": "composer",
       "schedule": {
