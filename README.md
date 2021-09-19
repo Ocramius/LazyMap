@@ -17,7 +17,7 @@ composer require ocramius/lazy-map
 ## Usage
 
 The current implementation is very simple and allows to define a map of "services" through a
-`LazyMap\CallbackMap`:
+`LazyMap\CallbackLazyMap`:
 
 ```php
 $map = new \LazyMap\CallbackLazyMap(function ($name) {
