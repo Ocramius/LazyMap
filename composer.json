@@ -24,7 +24,7 @@
     "require-dev": {
         "doctrine/coding-standard":           "^8.2.0",
         "infection/infection":                "^0.25.1",
-        "phpbench/phpbench":                  "^1.0.0-alpha4",
+        "phpbench/phpbench":                  "^1.1.1",
         "phpunit/phpunit":                    "^9.5.9",
         "vimeo/psalm":                        "^4.10.0"
     },
