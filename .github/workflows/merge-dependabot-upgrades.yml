@@ -7,6 +7,9 @@ on:
   check_suite:
     types:
       - completed
+    workflows:
+      - "Continuous Integration"
+      - "Check Demo Scripts"
 
 jobs:
   merge-me:
