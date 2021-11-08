@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb3eb2c5bb5582267646daa2d8c6d13d",
+    "content-hash": "97b70aec6dbd628126a4770707a3d316",
     "packages": [],
     "packages-dev": [
         {
@@ -1743,16 +1743,16 @@
         },
         {
             "name": "phpbench/phpbench",
-            "version": "1.1.3",
+            "version": "1.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbench/phpbench.git",
-                "reference": "ef567fafb819c1cda41e0fe634f7d42354707469"
+                "reference": "3555dff668e58d25c39d287f3f1bac13a7817b4c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbench/phpbench/zipball/ef567fafb819c1cda41e0fe634f7d42354707469",
-                "reference": "ef567fafb819c1cda41e0fe634f7d42354707469",
+                "url": "https://api.github.com/repos/phpbench/phpbench/zipball/3555dff668e58d25c39d287f3f1bac13a7817b4c",
+                "reference": "3555dff668e58d25c39d287f3f1bac13a7817b4c",
                 "shasum": ""
             },
             "require": {
@@ -1820,7 +1820,7 @@
             "description": "PHP Benchmarking Framework",
             "support": {
                 "issues": "https://github.com/phpbench/phpbench/issues",
-                "source": "https://github.com/phpbench/phpbench/tree/1.1.3"
+                "source": "https://github.com/phpbench/phpbench/tree/1.2.0"
             },
             "funding": [
                 {
@@ -1828,7 +1828,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-10-31T14:40:01+00:00"
+            "time": "2021-11-06T13:52:05+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
