@@ -23,7 +23,7 @@
     },
     "require-dev": {
         "doctrine/coding-standard":               "^9.0.0",
-        "roave/infection-static-analysis-plugin": "^1.10.0",
+        "roave/infection-static-analysis-plugin": "^1.11.1",
         "phpbench/phpbench":                      "^1.2.0",
         "phpunit/phpunit":                        "^9.5.10",
         "vimeo/psalm":                            "^4.13.1"
