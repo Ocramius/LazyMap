@@ -5,6 +5,7 @@ This small library aims at providing a very simple and efficient map of lazy-ins
 [![Total Downloads](https://poser.pugx.org/ocramius/lazy-map/downloads.png)](https://packagist.org/packages/ocramius/lazy-map)
 [![Latest Stable Version](https://poser.pugx.org/ocramius/lazy-map/v/stable.png)](https://packagist.org/packages/ocramius/lazy-map)
 [![Latest Unstable Version](https://poser.pugx.org/ocramius/lazy-map/v/unstable.png)](https://packagist.org/packages/ocramius/lazy-map)
+[![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FOcramius%2FLazyMap%2F2.5.x)](https://dashboard.stryker-mutator.io/reports/github.com/Ocramius/LazyMap/2.5.x)
 
 ## Installation
 
