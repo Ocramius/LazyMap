@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0ca258582a670a74a5f5e9cd0ae23595",
+    "content-hash": "a2e1ed1273369863ede4f6ca1244407b",
     "packages": [],
     "packages-dev": [
         {
@@ -1835,16 +1835,16 @@
         },
         {
             "name": "phpbench/phpbench",
-            "version": "1.2.3",
+            "version": "1.2.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpbench/phpbench.git",
-                "reference": "31750c45791a3e0bb7311aebfd1a4ed6f8f3fc86"
+                "reference": "a38af132cf317fd13c199cf73501153b82c279b5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpbench/phpbench/zipball/31750c45791a3e0bb7311aebfd1a4ed6f8f3fc86",
-                "reference": "31750c45791a3e0bb7311aebfd1a4ed6f8f3fc86",
+                "url": "https://api.github.com/repos/phpbench/phpbench/zipball/a38af132cf317fd13c199cf73501153b82c279b5",
+                "reference": "a38af132cf317fd13c199cf73501153b82c279b5",
                 "shasum": ""
             },
             "require": {
@@ -1886,7 +1886,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.1-dev"
+                    "dev-master": "1.2-dev"
                 }
             },
             "autoload": {
@@ -1911,7 +1911,7 @@
             "description": "PHP Benchmarking Framework",
             "support": {
                 "issues": "https://github.com/phpbench/phpbench/issues",
-                "source": "https://github.com/phpbench/phpbench/tree/1.2.3"
+                "source": "https://github.com/phpbench/phpbench/tree/1.2.5"
             },
             "funding": [
                 {
@@ -1919,7 +1919,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-12-24T10:09:29+00:00"
+            "time": "2022-03-06T17:10:14+00:00"
         },
         {
             "name": "phpdocumentor/reflection-common",
