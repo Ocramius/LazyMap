@@ -22,7 +22,7 @@
         "php": "^8.0"
     },
     "require-dev": {
-        "doctrine/coding-standard":               "^9.0.0",
+        "doctrine/coding-standard":               "^10.0.0",
         "roave/infection-static-analysis-plugin": "^1.21.0",
         "phpbench/phpbench":                      "^1.2.6",
         "phpunit/phpunit":                        "^9.5.23",
