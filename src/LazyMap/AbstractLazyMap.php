@@ -4,9 +4,7 @@ declare(strict_types=1);
 
 namespace LazyMap;
 
-/**
- * @psalm-template T
- */
+/** @psalm-template T */
 abstract class AbstractLazyMap
 {
     /**

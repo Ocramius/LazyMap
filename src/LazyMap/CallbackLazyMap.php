@@ -10,9 +10,7 @@ namespace LazyMap;
  */
 final class CallbackLazyMap extends AbstractLazyMap
 {
-    /**
-     * @psalm-param callable(string) : T $callback
-     */
+    /** @psalm-param callable(string) : T $callback */
     public function __construct(callable $callback)
     {
         $this->{self::class . "\0callback"} = $callback;
