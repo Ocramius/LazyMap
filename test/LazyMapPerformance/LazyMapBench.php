@@ -10,9 +10,7 @@ use PhpBench\Benchmark\Metadata\Annotations\BeforeMethods;
 
 use function array_key_exists;
 
-/**
- * @BeforeMethods({"setUp"})
- */
+/** @BeforeMethods({"setUp"}) */
 class LazyMapBench
 {
     /** @var array<string, int> */
