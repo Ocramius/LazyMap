@@ -26,7 +26,7 @@
         "roave/infection-static-analysis-plugin": "^1.25.0",
         "phpbench/phpbench":                      "^1.2.7",
         "phpunit/phpunit":                        "^9.5.26",
-        "vimeo/psalm":                            "^4.30.0"
+        "vimeo/psalm":                            "^5.0.0"
     },
     "autoload": {
         "psr-4": {
