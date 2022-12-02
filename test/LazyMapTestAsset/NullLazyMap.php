@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace LazyMapTestAsset;
 
+use AllowDynamicProperties;
 use LazyMap\AbstractLazyMap;
 
 /**
@@ -11,6 +12,7 @@ use LazyMap\AbstractLazyMap;
  *
  * @template-extends AbstractLazyMap<null>
  */
+#[AllowDynamicProperties]
 class NullLazyMap extends AbstractLazyMap
 {
     /** @return null */

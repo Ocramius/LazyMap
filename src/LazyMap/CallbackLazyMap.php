@@ -4,10 +4,13 @@ declare(strict_types=1);
 
 namespace LazyMap;
 
+use AllowDynamicProperties;
+
 /**
  * @psalm-template T
  * @template-extends AbstractLazyMap<T>
  */
+#[AllowDynamicProperties]
 final class CallbackLazyMap extends AbstractLazyMap
 {
     /** @psalm-param callable(string) : T $callback */
