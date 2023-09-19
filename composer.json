@@ -25,7 +25,7 @@
         "doctrine/coding-standard":               "^11.1.0",
         "roave/infection-static-analysis-plugin": "^1.29.0",
         "phpbench/phpbench":                      "^1.2.9",
-        "phpunit/phpunit":                        "^9.6.5",
+        "phpunit/phpunit":                        "^10.3.5",
         "vimeo/psalm":                            "^5.7.7"
     },
     "autoload": {
