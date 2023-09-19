@@ -7,6 +7,14 @@ This small library aims at providing a very simple and efficient map of lazy-ins
 [![Latest Unstable Version](https://poser.pugx.org/ocramius/lazy-map/v/unstable.png)](https://packagist.org/packages/ocramius/lazy-map)
 [![Mutation testing badge](https://img.shields.io/endpoint?style=flat&url=https%3A%2F%2Fbadge-api.stryker-mutator.io%2Fgithub.com%2FOcramius%2FLazyMap%2F2.5.x)](https://dashboard.stryker-mutator.io/reports/github.com/Ocramius/LazyMap/2.5.x)
 
+## Abandoned
+
+Starting with PHP 8.3, dynamic properties are [no longer allowed "out of the box"](https://wiki.php.net/rfc/deprecate_dynamic_properties).
+While it is still possible to have dynamic properties via explicit declaration (the `#[\AllowDynamicProperties]` attribute), the approach
+of this package is no longer to be considered safe nor efficient long-term.
+
+Based on that, this package is deprecated and abandoned: please use traditional PHP `array`s instead.
+
 ## Installation
 
 The suggested installation method is via [composer](https://getcomposer.org/):
